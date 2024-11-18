@@ -1,4 +1,4 @@
-package exercicios.fundamentos;
+package br.com.almaviva.fundamentos;
 
 import java.util.Scanner;
 
@@ -9,6 +9,8 @@ public class EscreverAB {
         System.out.println("Olá! Bem-vindo à máquina de escrever.");
 
         EscreverAB.escreveLetras();
+
+        sc.close();
     }
 
     static char[][] escreveLetras() {
@@ -49,6 +51,7 @@ public class EscreverAB {
                 }
             }
             contaLetra++;
+            sc.close();
         }
 
         System.out.println("Letras preenchidas: ");
@@ -61,4 +64,5 @@ public class EscreverAB {
 
         return letras;
     }
+    
 }

@@ -1,4 +1,4 @@
-package exercicios.fundamentos;
+package br.com.almaviva.fundamentos;
 
 public class Triangulo {
 	public static void main(String[] args) {

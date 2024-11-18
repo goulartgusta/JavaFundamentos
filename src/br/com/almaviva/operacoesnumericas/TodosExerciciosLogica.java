@@ -1,4 +1,4 @@
-package exercicios.operacoesnumericas;
+package br.com.almaviva.operacoesnumericas;
 
 import java.util.ArrayList;
 import java.util.List;

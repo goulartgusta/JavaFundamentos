@@ -1,4 +1,4 @@
-package exercicios.copia;
+package br.com.almaviva.arquivos.copia;
 
 public class Triangulo {
 	public static void main(String[] args) {

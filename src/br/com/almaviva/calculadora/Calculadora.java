@@ -1,4 +1,4 @@
-package exercicios.fundamentos;
+package br.com.almaviva.calculadora;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -11,6 +11,7 @@ public class Calculadora {
         String operacao = sc.nextLine();
         double resultado = calcularPorOrdem(operacao);
         System.out.println("Resultado = " + resultado);
+        sc.close();
     }
 
     public static double calcularPorOrdem(String operacao) {

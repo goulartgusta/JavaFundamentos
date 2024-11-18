@@ -1,4 +1,4 @@
-package exercicios.operacoesnumericas;
+package br.com.almaviva.operacoesnumericas;
 
 import java.util.Scanner;
 
@@ -8,18 +8,15 @@ public class ExDissertativa {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
 		System.out.println("Quantidade de números = " + contaNum(str));
+		sc.close();
 	}
 	
 	public static int contaNum(String str) {
 		int contador = 0;
-		boolean igualNum = false;
 		
 		for(char c : str.toCharArray()) {
 			if(c >= '0' && c <= '9') {
-				contador++;
-				igualNum=true;			
-			}else {
-				igualNum=false;
+				contador++;		
 			}
 		}
 		return contador;

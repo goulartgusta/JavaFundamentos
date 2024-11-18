@@ -1,4 +1,4 @@
-package exercicios.arquivos;
+package br.com.almaviva.arquivos;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 public class ManipulandoArq {
 
 	public static void main(String[] args) {
-		File diretorio = new File("/home/almaviva-linux/opt/dev/Projetos/JavaFundamentals/src/exercicios/copia/");
+		File diretorio = new File("/home/almaviva-linux/opt/dev/Projetos/JavaFundamentos/src/br/com/almaviva/arquivos/copia");
 		diretorio.mkdir();
 		File arquivoDuplicado = new File(diretorio, "Triangulo.java");
 		
@@ -28,12 +28,12 @@ public class ManipulandoArq {
 		}
 
 		try (BufferedReader buffRead = new BufferedReader(new FileReader(
-				"/home/almaviva-linux/opt/dev/Projetos/JavaFundamentals/src/exercicios/fundamentos/Triangulo.java"));
+				"/home/almaviva-linux/opt/dev/Projetos/JavaFundamentos/src/br/com/almaviva/fundamentos/Triangulo.java"));
 				BufferedWriter buffWrite = new BufferedWriter(new FileWriter(arquivoDuplicado))) {
 			String linha;
 			while ((linha = buffRead.readLine()) != null) {
-				if (linha.equals("package exercicios.fundamentos;")) {
-					linha = linha.replace("package exercicios.fundamentos;", "package exercicios.copia;");
+				if (linha.equals("package br.com.almaviva.fundamentos;")) {
+					linha = linha.replace("package br.com.almaviva.fundamentos;", "package br.com.almaviva.arquivos.copia;");
 				}
 				buffWrite.write(linha);
 				buffWrite.newLine();
@@ -43,16 +43,15 @@ public class ManipulandoArq {
 			System.out.println("Ocorreu um erro.");
 			e.printStackTrace();
 		}
-	
 			
 		try {
-		    ProcessBuilder processoJava = new ProcessBuilder("javac", "exercicios/copia/Triangulo.java");
-		    processoJava.directory(new File("/home/almaviva-linux/opt/dev/Projetos/JavaFundamentals/src/"));
+		    ProcessBuilder processoJava = new ProcessBuilder("javac", "br/com/almaviva/arquivos/copia/Triangulo.java");
+		    processoJava.directory(new File("/home/almaviva-linux/opt/dev/Projetos/JavaFundamentos/src/"));
 		    Process processoCompilaJava = processoJava.start();
 		    processoCompilaJava.waitFor();
 
-		    ProcessBuilder processoClass = new ProcessBuilder("java", "exercicios.copia.Triangulo");
-		    processoClass.directory(new File("/home/almaviva-linux/opt/dev/Projetos/JavaFundamentals/src/"));
+		    ProcessBuilder processoClass = new ProcessBuilder("java", "br.com.almaviva.arquivos.copia.Triangulo");
+		    processoClass.directory(new File("/home/almaviva-linux/opt/dev/Projetos/JavaFundamentos/src/"));
 		    Process processoCompilaClass = processoClass.start();
 		    processoCompilaClass.waitFor();
 
